@@ -1,0 +1,25 @@
+<project>
+
+    <target name="clean">
+        <delete dir="build"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="samue/source/repos/ihopeyouwor2k"/>
+        <javac srcdir="src" destdir="java/com.napier.sem"/>
+    </target>
+
+    <target name="jar">
+        <mkdir dir="build/jar"/>
+        <jar destfile="samue/source/repos/ihopeyouwor2k/App.jar" basedir="repos/ihopeyouwor2k">
+            <manifest>
+                <attribute name="main" value="com.napier.sem.App"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="run">
+        <java jar="build\jar\App.jar" fork="true"/>
+    </target>
+
+</project>
